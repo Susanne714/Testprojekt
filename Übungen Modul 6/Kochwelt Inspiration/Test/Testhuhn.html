@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testhuhn</title>
+    <link rel="tab icon" href="./img/logo_small.png" />
+  </head>
+
+  <body onload="includeHTML()">
+    <div w3-include-html="./templates/header.html"></div>
+    <script src="./testscript.js"></script>
+
+    <section class="topic-rezeptseite">
+      <h1>Ofenhähnchen</h1>
+      <img
+        class="img-rezeptseite"
+        src="./img/ofenhaehnchen.jpg"
+        alt="OfenhähnchenImg"
+      />
+    </section>
+    
+    <section class="recipe-info">
+      <div class="infobox">
+        <img
+          class="infobox-img"
+          src="./img/icons/clock-regular.svg"
+          alt="Time need"
+        />
+        <span>65 Min.</span>
+      </div>
+      <div class="infobox">
+        <img
+          class="infobox-img"
+          src="./img/icons/brain-solid.svg"
+          alt="Degree"
+        />
+        <span>simpel</span>
+      </div>
+      <div class="infobox">
+        <img
+          class="infobox-img"
+          src="./img/icons/calendar-alt-regular.svg"
+          alt="Date of entry"
+        />
+        <span>11.02.2024</span>
+      </div>
+    </section>
+
+    <div class="separator2"></div>
+
+    <div class="input">
+      <span>Zutaten für</span>
+      <input id="amount" type="number" min="1" max="20" placeholder="1" />
+      <button onclick="calculateR1()" class="calculate-portion-button">
+        Portionen
+      </button>
+    </div>
+
+    <div class="ingredients" id="ingredients">
+      <span class="ingredients-grey-row">1 Hähnchenschenkel</span>
+      <span class="ingredients-white-row">1 EL Olivenöl</span>
+      <span class="ingredients-grey-row">0,5 rote Zwiebeln</span>
+      <span class="ingredients-white-row">0,5 kleine Knoblauchzehe(n)</span>
+      <span class="ingredients-grey-row">200 g Kartoffeln</span>
+      <span class="ingredients-white-row">o,5 Zucchini</span>
+      <span class="ingredients-grey-row">0,5 Paprikaschote(n), rot</span>
+      <span class="ingredients-white-row">1 Möhre(n)</span>
+      <span class="ingredients-grey-row">37,5 g Kirschtomaten</span>
+      <span class="ingredients-white-row">0,25 Zitronen, bio</span>
+      <span class="ingredients-grey-row">25 ml Weißwein</span>
+      <span class="ingredients-white-row">50 ml Gemüsebrühe</span>
+      <span class="ingredients-grey-row">0,25 TL Paprikapulver</span>
+      <span class="ingredients-white-row">etwas Salz</span>
+      <span class="ingredients-grey-row">frisch gemahlener Pfeffer</span>
+      <span class="ingredients-white-row">einige Zweige Rosmarin</span>
+      <span class="ingredients-grey-row">einige Zweige Thymian</span>
+    </div>
+    
+    Test
+
+    <ul id="zutaten">
+        </ul>
+
+    <h2 class="h2-rezeptseite">Zubereitung</h2>
+
+    <div class="recipe-info">
+      <div class="infobox">
+        <img
+          class="infobox-img"
+          src="./img/icons/clock-regular.svg"
+          alt="Time need"
+        />
+        <span>ca. 20 Min.</span>
+      </div>
+      <div class="infobox">
+        <img
+          class="infobox-img"
+          src="./img/icons/clock-regular.svg"
+          alt="Time need"
+        />
+        <span>Gesamtzeit ca. 65 Min.</span>
+      </div>
+    </div>
+
+    <div class="how-to-prepare">
+      <ol class="steps">
+        <li>
+          Eine große Ofenform (30 x 40 cm) mit etwas Olivenöl ausreiben.
+          Hähnchenschenkel mit Küchenpapier trocken tupfen. Mit Olivenöl,
+          Paprikapulver, Salz und Pfeffer marinieren.
+        </li>
+        <br />
+        <li>
+          Zwiebeln und Knoblauch abziehen und die Zwiebeln in Spalten schneiden.
+          Rosmarin und Thymian waschen, abtropfen lassen, Nadeln bzw. Blätter
+          vom Stiel zupfen, mit dem Knoblauch fein hacken und mit dem restlichen
+          Olivenöl verrühren.
+        </li>
+        <br />
+        <li>
+          Kartoffeln, Gemüse und Zitrone waschen und abtropfen lassen.
+          Kartoffeln halbieren, Zucchini und Paprikaschoten putzen. Zucchini in
+          1 cm dicke Scheiben und Paprika in Streifen schneiden.
+        </li>
+        <br />
+        <li>
+          Backofen auf 200 Grad Ober- und Unterhitze (Umluft: 180 Grad)
+          vorheizen. Möhren schälen und in 0,5 cm dicke Scheiben schneiden.
+          Kartoffeln, Zucchini, Paprika, Möhren und Zwiebeln in die Ofenform
+          geben, mit 1 TL Salz und 4 EL von dem Rosmarin-Thymian-Knoblauch-Öl
+          marinieren.
+        </li>
+        <br />
+        <li>
+          Zitrone in Scheiben schneiden und mit den Hähnchenschenkeln auf dem
+          Gemüse verteilen. Mit Weißwein und Geflügelbrühe aufgießen und im
+          vorgeheizten Ofen auf der mittleren Schiene ca. 45 Minuten backen.
+        </li>
+        <br />
+        <li>
+          Kirschtomaten mit restlichem Kräuteröl marinieren, 10 Minuten vor Ende
+          der Garzeit in die Ofenform geben und mitbacken. Ofenhähnchen mit Salz
+          und Pfeffer würzen und nach Wunsch mit frischen Kräutern bestreut
+          servieren.
+        </li>
+        <br />
+      </ol>
+    </div>
+
+    <h3 class="user-info">Rezept erstellt von</h3>
+    <div class="user">
+      <img class="user-img" src="./img/20230111_201207.jpg" alt="user-img" />
+      <span>Susanne</span>
+    </div>
+
+    <div w3-include-html="./templates/footer.html"></div>
+  </body>
+</html>

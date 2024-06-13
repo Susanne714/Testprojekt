@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollbar Customization</title>
+    <style>
+        .shopping-cart {
+            height: calc(100vh - 110px);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-content {
+            width: 330px;
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 24px; /* Platz für total-value */
+        }
+
+        .cart-content::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .cart-content::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+            border-radius: 5px;
+        }
+
+        .cart-content::-webkit-scrollbar-thumb {
+            background: #888; 
+            border-radius: 5px;
+        }
+
+        .cart-content::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+
+        .cart-content {
+            scrollbar-width: thin;
+            scrollbar-color: #888 #f1f1f1;
+        }
+
+        .total-value {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: white;
+            z-index: 10;
+            width: 330px;
+        }
+
+        .right {
+            position: relative;
+        }
+
+        footer {
+            height: 110px;
+        }
+    </style>
+</head>
+<body>
+    <div id="right" class="right">
+        <div class="shopping-cart">
+            <h3>Warenkorb</h3>
+            <div class="slider-container">
+                <div class="slider" id="slider">
+                    <!-- Slider content -->
+                </div>
+            </div>
+
+            <div class="cart-content" id="renderShoppingCart">
+                <!-- Cart items -->
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+                <div>Item 4</div>
+                <div>Item 5</div>
+                <div>Item 6</div>
+                <div>Item 7</div>
+                <div>Item 8</div>
+                <div>Item 9</div>
+                <div>Item 10</div>
+            </div>
+
+            <div class="total-value">
+                <div class="order-summary"></div>
+                <div class="min-order-value">
+                    <span class="min-order-value-alert" id="alert"></span>
+                </div>
+
+                <div class="order-button" id="orderButton" onclick="order()" disabled>Bestellen</div>
+            </div>                               
+        </div>
+    </div>
+
+    <footer></footer>
+
+    <script>
+        window.onscroll = function () {
+            const right = document.querySelector('.right');
+            if (window.scrollY > 0) {
+                right.style.position = 'fixed';
+                right.style.top = '0';
+            } else {
+                right.style.position = 'relative';
+                right.style.top = '0';
+            }
+        };
+    </script>
+</body>
+</html>

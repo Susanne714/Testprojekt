@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;       
+    }   
+    .img{
+        height: 140px;
+    }
+</style>
+
+<body> <!--//onload-Funktion kann hier ausgeführt werden, sobald "Start"-Button inaktiv/gelöscht!-->
+
+    <!-- <button onclick="image2()">Start!</button><br> -->
+    
+    <input id="inputfield" type="number" placeholder="wie lange?">
+    <button onclick="start()">Start!</button>
+    <img class="img" id="image" src="./croissant.jpg" alt="">
+    
+
+
+
+    <script>
+        let images = ['croissant.jpg', 'ofenhaehnchen.jpg', 'Mango-Lassi.webp'] // Array mit allen anzuzeigenden Inhalten
+        let currentImage = 0;
+
+function start(){
+            let milliseconds = +document.getElementById('inputfield').value * 1000;
+
+    if(milliseconds>10000) {
+        alert('Bitte kleinere Zahl eingeben')
+            } else {
+
+        if (milliseconds < 1000){
+            alert('Bitte mindestens 1 Sekunde angeben')
+            } else {
+            showImage(currentImage);
+            currentImage++;
+
+            if(currentImage == 3) {
+                currentImage = 0;
+            }
+            setTimeout(start, milliseconds);
+        }
+    }
+}
+
+        // let i = 0; // Variable "i" startet bei 0 (0 ist IMMER der erste Wert!)
+
+        // function image1(){
+        //     document.getElementById('image').src = images[i]  // i hat den Wert 0
+        //     i++;
+        //     setTimeout(image2, 3000);          
+        // }
+
+        // function image2(){
+        //     document.getElementById('image').src = images[i] // i hat den Wert 1 (durch i++)
+        //     i++;
+        //     setTimeout(image3, 3000);
+        // }
+
+        // function image3(){
+        //     document.getElementById('image').src = images[i] // i hat den Wert 2
+        //     i=0;
+        //     setTimeout(image1, 3000);
+        // }
+
+        function showImage(i){
+            document.getElementById('image').src = images[i]
+        }
+
+    </script>
+    
+</body>
+</html>

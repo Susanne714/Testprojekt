@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+
+</script>
+
+<style>
+    body{
+        margin: 0;
+       
+    }
+
+    .test{
+        font-size: 56px;
+        height: 120px;
+        margin-top: 64px;
+        padding: 100px;
+        background-color: grey;
+        max-width: 1920px;
+        margin-bottom: 50px;        
+    }
+
+    .img{
+        height: 140px;
+    }
+
+    .imgcontainer{
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;     
+    }
+</style>
+
+<body onload="image1"> <!--//onload-Funktion kann hier ausgeführt werden, sobald "Start"-Button inaktiv/gelöscht!-->
+    <h1>Testseite</h1>    
+
+<div class="test">
+    <div class="imgcontainer">
+    <img class="img" src="./UK.png" alt="">
+    <img class="img" src="./Germany.png" alt="">
+    <img class="img" src="./UK.png" alt="">
+    </div>
+</div>
+
+<input type="text" placeholder="Try 1">
+    <button onclick="newFruit1()">Obst anzeigen</button>
+    <p id="obst1"></p>   
+    <!-- // Ende V1 -->
+
+    <input type="text" placeholder="Try 2"><button onclick="obstFromTextfield()">weiteres Obst anzeigen</button>
+    <p id="obst2"></p>
+    <!-- // Ende V2 -->
+
+    <input id="inputfruit" type="text" placeholder="Try 3"><button onclick="obstFromTextfield()">mehr Obst anzeigen</button>
+    
+    <!-- // Ende V3 -->
+
+    <button onclick="image2()">Start!</button>
+    
+    <img class="img" id="image" src="./croissant.jpg" alt="">
+
+
+    <script>
+        function newFruit1(){
+            let x = 'Schokolade'
+            document.getElementById('obst1').innerHTML = `${x} ist lecker`
+        }   
+// #############
+
+        function obstFromTextfield(){
+            let fruit = 'Kiwi'
+            newFruit2(fruit)
+        }
+
+        function newFruit2(x){
+            document.getElementById('obst2').innerHTML = `${x} ist lecker`
+        }
+// #############        
+
+        function obstFromTextfield(){
+            let fruit = document.getElementById('inputfruit').value
+            newFruit2(fruit)
+        }
+
+        function newFruit2(x){
+            document.getElementById('obst2').innerHTML = `${x} ist lecker`
+        }
+
+        let images = ['croissant.jpg', 'ofenhaehnchen.jpg', 'Mango-Lassi.webp'] // Array mit allen anzuzeigenden Inhalten
+        let i = 0; // Variable "i" startet bei 0 (0 ist IMMER der erste Wert!)
+
+        function image1(){
+            document.getElementById('image').src = images[i]  // i hat den Wert 0
+            i++;
+            setTimeout(image2, 3000);          
+        }
+
+        function image2(){
+            document.getElementById('image').src = images[i] // i hat den Wert 1 (durch i++)
+            i++;
+            setTimeout(image3, 3000);
+        }
+
+        function image3(){
+            document.getElementById('image').src = images[i] // i hat den Wert 2
+            i=0;
+            setTimeout(image1, 3000);
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      table {
+        font-family: sans-serif;
+        border-collapse: collapse;
+        width: 40%;
+        margin-top: 32px;
+      }
+
+      table td,
+      table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      table tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      table tr:hover {
+        background-color: #ddd;
+      }
+    </style>
+
+    <script>
+      // let userValue = document.getElementById('inputfield').value;
+
+      let ingredients = ["g Kartoffeln", "ml Milch", "g Butter", "TL Salz"];
+      let stdQty = ["150", "50", "4", "0.25"];
+     
+
+      function showIngredients() {        
+        for (let i = 0; i < ingredients.length; i++) {
+          document.getElementById('table').innerHTML += `<tr><td> ${stdQty[i]}</td><td>${ingredients[i]}</td></tr>`;
+        }
+      }
+
+      function calculate(){
+        document.getElementById('table').innerHTML = '';
+        let demand = document.getElementById('inputfield');
+          if ((demand.value < 1) || (demand.value > 20)){
+            alert('Bitte zwischen 1 und 20 Portionen eingeben.')
+            return false;
+          } else{
+
+        let demand = document.getElementById('inputfield').value;
+        for (let i = 0; i < ingredients.length; i++){
+          document.getElementById('table').innerHTML += `<tr><td> ${demand * stdQty[i]}</td><td>${ingredients[i]}</td></tr>`;
+        }        
+        document.getElementById('inputfield').value=''
+          }
+        }
+
+      </script>
+  </head>
+  <body onload="showIngredients()">
+    <input placeholder="Menge eingeben" id="inputfield" type="number" />
+    <button onclick="calculate()">Berechnen</button>
+
+    <table>
+      <tbody id="table">
+        <tr>
+          <td>Menge</td>
+          <td>Zutat</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </body>
+</html>

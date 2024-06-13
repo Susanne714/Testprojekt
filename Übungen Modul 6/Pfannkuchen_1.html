@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table td,
+        table th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        table tr:hover {
+            background-color: #ddd;
+        }
+
+        table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rezept für Pfannkuchen</h1>
+    <button onclick="getIngredient1()">Zutat 1</button>
+    <button onclick="getIngredient2()">Zutat 2</button>
+    <button onclick="getIngredient3()">Zutat 3</button>
+
+    <table>
+    <tbody id="table">
+    <tr>
+        <td>Menge</td>
+        <td>Name</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Eier</td>
+    </tr>
+    </tbody>
+    </table>
+
+    <input placeholder="Menge eingeben" id="inputName" type="text">
+    <input placeholder="Zutat eingeben" id="inputMenge" type="text">
+    <button onclick="addNew()">Hinzufügen</button>
+
+    
+
+    <script>
+        
+        // function getIngredient1(){
+        //     let menge = ('200ml', '400g');
+        //     let name = ('Milch', 'Mehl');
+        //     addIngredient (menge, name)
+        // }
+
+        // function addIngredient(menge, name){
+        //     document.getElementById('table').innerHTML += `
+        //     <tr><td>${menge[0]}</td><td>${name[0]}</td></tr>
+        //     <tr><td>${menge[1]}</td><td>${name[1]}</td></tr>
+        //     `
+        // }
+
+
+        function addNew(){
+            let menge = document.getElementById('inputName').value;
+            let name = document.getElementById('inputMenge').value;
+            addIngredient(menge, name);
+            document.getElementById('inputName').value = ''
+            document.getElementById('inputMenge').value = ''
+            
+        }
+
+        function getIngredient1(){
+            let menge = ('200');
+            let name = ('ml Milch');
+            addIngredient (menge, name)
+        }
+      
+
+        function getIngredient2(){
+            let menge = ('400');
+            let name = ('g Mehl');
+            addIngredient (menge, name)
+        }
+       
+
+        function getIngredient3(){
+            let menge = ('150');
+            let name = ('g Zucker');
+            addIngredient (menge, name)
+        }
+
+        function addIngredient(menge, name){
+            document.getElementById('table').innerHTML += `
+            <tr><td>${menge}</td><td>${name}</td></tr>
+            `
+        }
+
+        
+
+        
+        
+
+            
+            
+        
+
+    </script>
+    
+</body>
+</html>
